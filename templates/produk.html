@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Produk</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  {% include 'navbar.html' %}
+
+  <section class="produk-section">
+    <h1 class="produk-title">Daftar Produk Kami</h1>
+    <div class="produk-container">
+
+      <!-- CARD 1 -->
+      <div class="produk-card">
+        <img src="{{ url_for('static', filename='../static/images/beras.jpg') }}" alt="Produk 1">
+        <h2>Beras Organik</h2>
+        <p>Beras sehat tanpa pestisida, 1kg.</p>
+        <a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20beli%20Beras%20Organik" class="btn-beli" target="_blank">
+          <i class="fab fa-whatsapp"></i> Beli Sekarang
+        </a>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="produk-card">
+        <img src="{{ url_for('static', filename='../static/images/kopi.jpg') }}" alt="Produk 2">
+        <h2>Kopi Arabika</h2>
+        <p>Kopi asli dataran tinggi, 250gr.</p>
+        <a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20beli%20Kopi%20Arabika" class="btn-beli" target="_blank">
+          <i class="fab fa-whatsapp"></i> Beli Sekarang
+        </a>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="produk-card">
+        <img src="{{ url_for('static', filename='images/madu.jpeg') }}" alt="Produk 3">
+        <h2>Madu Hutan</h2>
+        <p>Madu murni asli hutan, 500ml.</p>
+        <a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20beli%20Madu%20Hutan" class="btn-beli" target="_blank">
+          <i class="fab fa-whatsapp"></i> Beli Sekarang
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  {% include 'footer.html' %}
+</body>
+</html>
