@@ -10,13 +10,13 @@
   {% include 'navbar.html' %}
   <div class="content-home">
     <h1>Selamat Datang di Tentang AgriBisnis</h1>
+    <button onclick="onScroll()">Lihat Artikel</button>
   </div>
 <div class="about">
   <h1><i class="fas fa-leaf"></i> Tentang Agribisnis</h1>
   <p>
     <strong>Agribisnis</strong> adalah sektor yang mencakup semua kegiatan dari hulu ke hilir dalam industri pertanian—mulai dari produksi, pengolahan, distribusi hingga pemasaran hasil tani. Agribisnis merupakan penggerak utama dalam ketahanan pangan dan ekonomi pedesaan.
   </p>
-
     <div class="about-cards">
       <div class="card">
         <i class="fas fa-seedling"></i>
@@ -45,8 +45,35 @@
       </div>
     </div>
   </div>
+
+  <div class="artikel-section" id="artikel">
+  <h1><i class="fas fa-newspaper"></i> Artikel Terbaru</h1>
+  <div class="artikel-container">
+    <div class="artikel-card">
+      <h2>Dampak Pengembangan Agribisnis </h2>
+      <p>Transformasi digital dalam agribisnis mendorong efisiensi dan ketahanan pangan global</p>
+      <a href="{{ url_for('static', filename='artikel1.pdf') }}" download class="btn-download">
+        <i class="fas fa-download"></i> Unduh Artikel
+      </a>
+    </div>
+    <div class="artikel-card">
+      <h2>Jurnal Agribisnis</h2>
+      <p>PENGARUH HARGA, KUALITAS PRODUK DAN GAYA HIDUP TERHADAP 
+WILLINGNESS TO PAY (WTP) SEMANGKA ORGANIK</p>
+      <a href="{{ url_for('static', filename='artikel2.pdf') }}" download class="btn-download">
+        <i class="fas fa-download"></i> Unduh Artikel
+      </a>
+    </div>
+  </div>
+</div>
   {% include 'footer.html' %}
 
 
 </body>
+<script>
+  function onScroll(){
+    document.getElementById('artikel').scrollIntoView({behavior : "smooth"});
+  }
+  
+</script>
 </html>

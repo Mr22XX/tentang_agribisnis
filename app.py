@@ -22,14 +22,14 @@ def home():
 def produk():
     return render_template('produk.html')
 
-@app.route('/download', methods=['GET', 'POST'])
-def download():
+@app.route('/kontak', methods=['GET', 'POST'])
+def kontak():
     if request.method == 'POST':
         name = request.form['name']
         comment = request.form['comment']
         if name and comment:
             comments.append((name, comment))
-    return render_template('download.html', comments=comments)
+    return render_template('kontak.html', comments=comments)
 
 if __name__ == '__main__':
     app.run(debug=True)

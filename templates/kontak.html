@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Artikel & Diskusi</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  {% include 'navbar.html' %}
+
+  <div class="content">
+   <section class="kontak-section">
+      <h2><i class="fas fa-address-book"></i> Kontak Kami</h2>
+      <div class="kontak-info">
+        <p><i class="fas fa-user"></i> Admin Agribisnis</p>
+        <p><i class="fas fa-envelope"></i> Email: <a href="mailto:agribisnis@gmail.com">agribisnis@gmail.com</a></p>
+        <p><i class="fas fa-phone"></i> Telepon/WhatsApp: <a href="tel:+6282178555805">+62 821-7855-5805</a></p>
+        <p><i class="fas fa-map-marker-alt"></i> Alamat: Jl. Raya Pertanian No. 123, Kota Bengkulu, Indonesia</p>
+      </div>
+    </section>
+
+
+    <section class="diskusi-section">
+      <h2><i class="fas fa-comments"></i> Forum Diskusi</h2>
+      <form action="#" method="POST" class="diskusi-form">
+        <label for="nama_diskusi">Nama:</label>
+        <input type="text" id="nama_diskusi" name="name" required>
+
+        <label for="komentar">Komentar:</label>
+        <textarea id="komentar" name="comment" rows="4" required></textarea>
+
+        <button type="submit">Kirim Komentar</button>
+      </form>
+
+      <div class="komentar-list">
+        <h3>Komentar Terbaru</h3>
+        <!-- Komentar statis contoh -->
+      {% for name, comment in comments %}
+        <div class="komentar-item">
+          <strong>{{ name }} :</strong>
+          <p>{{ comment }}</p>
+        </div>
+      {% endfor %}
+
+      </div>
+    </section>
+  </div>
+
+  {% include 'footer.html' %}
+</body>
+</html>
